@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "f95b8110-5bd0-4232-839d-6dad1f288db2",
+		"name": "Units",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3993102"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"value\": 10,\n    \"type\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.5:3001/api/v1/unit",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"5"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"unit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get with query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.5:3001/api/v1/unit?type=0&unit=7&from_date=1679741778&to_date=1679741778",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"5"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"unit"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "0"
+						},
+						{
+							"key": "unit",
+							"value": "7"
+						},
+						{
+							"key": "from_date",
+							"value": "1679741778"
+						},
+						{
+							"key": "to_date",
+							"value": "1679741778"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

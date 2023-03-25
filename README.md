@@ -1,19 +1,13 @@
-# Media helper
+# Metric tracking system
 
-Hỗ trợ một số các tác vụ liên quan đến các static file: Split file pdf theo số trang, Zip các file thành 1 file zip
+Metric tracking system that support different Units.
 
-# Deployment with docker
+# Notes
 
-1. Install docker, docker compose
-2. Build image with docker compose
-   - Update Makefile `COMPOSE_FILE = docker-compose.prod.yml`
-   - Make build
-3. Up image with docker compose
-   - Create config from config.example
-   - Update volumes in `docker-compose.prod.yml`
-   - Update environment in `docker-compose.prod.yml`
-   - Run command `make up`
-4. Build image with docker
-   - Build production `docker build -f Dockerfile.prod -t media-helper .`
-5. Up image with docker run
-   - Run production `docker run -d --name media-helper -v /logs:/app/logs -v /protected:/app/protected --env USERID=1001 --env USERNAME=huyca -p 192.168.2.113:3001:3001 media-helper`
+Database save unit Meter and °C
+
+# Deployment
+
+1. Create config from `app/config.example` -> `app/config`. Change variables environment
+2. Run `yarn` -> `yarn dev`
+3. Import json postman from test folder
