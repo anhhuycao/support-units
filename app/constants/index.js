@@ -1,3 +1,7 @@
 const TYPE_UNIT = { DISTANCE: 0, TEMPERATURE: 1 };
 
-module.exports = { TYPE_UNIT };
+const DISTANCE_UNIT = { METER: 0, CENTIMETER: 1, INCH: 2, FEET: 3, YARD: 4 };
+
+const TEMPERATURE_UNIT = { C: 5, F: 6, K: 7 };
+
+module.exports = { TYPE_UNIT, DISTANCE_UNIT, TEMPERATURE_UNIT };
