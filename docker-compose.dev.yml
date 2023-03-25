@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     container_name: support-units
-    restart: unless-stopped
+    restart: always
     ports:
       - 0.0.0.0:3001:3001
     volumes:
@@ -21,7 +21,7 @@ services:
       - MYSQL_USER=mysql
       - MYSQL_PASSWORD=mysql
       - MYSQL_ROOT_PASSWORD=mysql
-      - MYSQL_DATABASE=mysql
+      - MYSQL_DATABASE=units
     ports:
       - 0.0.0.0:3306:3306
     volumes:

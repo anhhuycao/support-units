@@ -3,7 +3,7 @@ COMPOSE_FILE = docker-compose.dev.yml
 ps:
 	docker compose -f ${COMPOSE_FILE} ps
 log:
-	docker compose -f ${COMPOSE_FILE} logs support-units
+	docker compose -f ${COMPOSE_FILE} logs
 down:
 	docker compose -f ${COMPOSE_FILE} down
 up:

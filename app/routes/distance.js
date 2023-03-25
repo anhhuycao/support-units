@@ -10,10 +10,11 @@ router.post('/unit', postUnit, async function (req, res) {
     if (errors.isEmpty()) {
       const result = await createUnit(req.body);
 
-      res.status(201).json({ code: 201, success: true, message: 'Ok', data: result });
+      return res.status(201).json({ code: 201, success: true, message: 'Ok', data: result });
     }
+    return res.status(400).json({ code: 400, success: true, message: 'Not ok', data: errors.array() });
   } catch (err) {
-    res.status(400).json({ code: 400, success: false, message: err, data: null });
+    res.status(500).json({ code: 500, success: false, message: 'System error', data: null });
   }
 });
 

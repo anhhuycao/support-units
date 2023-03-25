@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  return sequelize.define(
+  const Unit = sequelize.define(
     'unit',
     {
       id: { type: DataTypes.INTEGER(11), primaryKey: true, autoIncrement: true },
@@ -9,4 +9,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     { tableName: 'unit', timestamps: false }
   );
+
+  Unit.sync({ alter: true }); // TODO: Too risk, remove on production
+  return Unit;
 };
