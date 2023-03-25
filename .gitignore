@@ -1,0 +1,9 @@
+node_modules/
+app/config/
+logs/
+keys/
+protected/
+system/
+temp/
+yarn.lock
+package-lock.json

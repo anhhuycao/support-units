@@ -1,0 +1,16 @@
+/.git
+/logs
+/.husky
+/node_modules
+/test
+.gitignore
+.dockerignore
+docker-compose.dev.yml
+docker-compose.prod.yml
+Dockerfile.dev
+Dockerfile.prod
+Makefile
+README.md
+package-lock.json
+.prettierrc
+.eslintrc.json
