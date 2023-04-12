@@ -11,6 +11,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.raw({ limit: '50MB' }));
 app.use('/api/v1/', distance);
 
+app.get('/', (req, res) => {
+  res.json({ status: true, code: 200, message: 'Api v1', data: null });
+});
+
 app.listen(express.port, '0.0.0.0', () => {
   logger.info('Start server successfully at port %s', express.port);
   console.info(`App listening at port: ${express.port}`);

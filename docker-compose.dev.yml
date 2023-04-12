@@ -7,7 +7,9 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     container_name: support-units
-    restart: always
+    restart: unless-stopped
+    depends_on:
+      - mysql
     ports:
       - 0.0.0.0:3001:3001
     volumes:
@@ -32,3 +34,16 @@ services:
         '--character-set-server=utf8',
         '--collation-server=utf8_general_ci'
       ]
+
+  nginx:
+    image: nginx:1.23.4
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    depends_on:
+      - support-units
+    ports:
+      - 0.0.0.0:80:80
+    volumes:
+      - ./myapp/build:/var/www/public
+      - ./nginx/:/etc/nginx/conf.d/
